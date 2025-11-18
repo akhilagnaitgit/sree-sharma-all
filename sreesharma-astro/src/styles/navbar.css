@@ -1,0 +1,12 @@
+.dropdown-list {
+  z-index: 9999;
+  min-width: 240px;
+}
+
+.mobile-sidebar button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+}

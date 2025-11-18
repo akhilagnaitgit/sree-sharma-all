@@ -1,0 +1,155 @@
+Form for homa service
+      ============ 2️⃣ Form + Description + Counters ============
+      <section className="container py-5">
+        <div className="row align-items-center">
+          {/* Form */}
+          <div className="col-md-5">
+            <h3 className="mb-3 text-primary">Get Your Auspicious Time</h3>
+            <form className="p-4 border rounded-3 bg-light shadow-sm">
+              <div className="row g-3">
+                <div className="col-md-12">
+                  
+                  <input type="text" className="form-control" placeholder="Your Name" />
+                </div>
+                <div className="col-md-12">
+                  
+                  <input type="text" className="form-control" placeholder="Your Occupation" />
+                </div>
+                <div className="col-md-12">
+                  <input type="email" className="form-control" placeholder="example@mail.com" />
+                </div>
+                <div className="col-md-12">
+                  <input type="text" className="form-control" placeholder="Your Phone" />
+                </div>
+                <div className="col-md-12">
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="col-md-12">
+                  <input type="text" className="form-control" placeholder="Your Birthplace" />
+                </div>
+                <div className="col-12">
+                  <label className="form-label">Address</label>
+                  <textarea className="form-control" rows="2"></textarea>
+                </div>
+                <div className="col-12 text-center mt-3">
+                  <button className="btn btn-primary px-4">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className="col-md-1">
+
+          </div>
+
+          {/* Right Description */}
+          <div className="col-md-6 mt-1 mt-lg-0">
+            <h3 className="text-dark">Why Homas Matter?</h3>
+            <p>
+              An auspicious muhurta ensures harmony and success by aligning your
+              important moments with planetary favorability. Our experts use
+              authentic Vedic methods to calculate ideal timings for your
+              spiritual and personal milestones.
+            </p>
+
+            <div className="row text-center mt-4">
+              <div className="col-4">
+                <h2 className="text-primary">
+                  <CountUp end={100} duration={3} />%
+                </h2>
+                <p>Authentic Vedic Calculations</p>
+              </div>
+              <div className="col-4">
+                <h2 className="text-primary">
+                  <CountUp end={22} duration={3} />
+                </h2>
+                <p>Years of Expertise</p>
+              </div>
+              <div className="col-4">
+                <h2 className="text-primary">
+                  <CountUp end={10} duration={3} />
+                </h2>
+                <p>Certified Astrologers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+form for muhurta page
+      <section className="container py-5">
+        <div className="row align-items-center">
+          {/* Form */}
+          <div className="col-md-5">
+            <h3 className="mb-3 text-primary">Get Your Auspicious Time</h3>
+            <form className="p-4 border rounded-3 bg-light shadow-sm">
+              <div className="row g-3">
+                <div className="col-md-12">
+                  
+                  <input type="text" className="form-control" placeholder="Your Name" />
+                </div>
+                <div className="col-md-12">
+                  
+                  <input type="text" className="form-control" placeholder="Your Occupation" />
+                </div>
+                <div className="col-md-12">
+                  <input type="email" className="form-control" placeholder="example@mail.com" />
+                </div>
+                <div className="col-md-12">
+                  <input type="text" className="form-control" placeholder="Your Phone" />
+                </div>
+                <div className="col-md-12">
+                  <input type="date" className="form-control" />
+                </div>
+                <div className="col-md-12">
+                  <input type="text" className="form-control" placeholder="Your Birthplace" />
+                </div>
+                <div className="col-12">
+                  <label className="form-label">Address</label>
+                  <textarea className="form-control" rows="2"></textarea>
+                </div>
+                <div className="col-12 text-center mt-3">
+                  <button className="btn btn-primary px-4">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className="col-md-1">
+
+          </div>
+
+          {/* Right Description */}
+          <div className="col-md-6 mt-1 mt-lg-0">
+            <h3 className="text-dark">Why Muhurtas Matter?</h3>
+            <p>
+              An auspicious muhurta ensures harmony and success by aligning your
+              important moments with planetary favorability. Our experts use
+              authentic Vedic methods to calculate ideal timings for your
+              spiritual and personal milestones.
+            </p>
+
+            <div className="row text-center mt-4">
+              <div className="col-4">
+                <h2 className="text-primary">
+                  <CountUp end={100} duration={3} />%
+                </h2>
+                <p>Authentic Vedic Calculations</p>
+              </div>
+              <div className="col-4">
+                <h2 className="text-primary">
+                  <CountUp end={22} duration={3} />
+                </h2>
+                <p>Years of Expertise</p>
+              </div>
+              <div className="col-4">
+                <h2 className="text-primary">
+                  <CountUp end={10} duration={3} />
+                </h2>
+                <p>Certified Astrologers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>

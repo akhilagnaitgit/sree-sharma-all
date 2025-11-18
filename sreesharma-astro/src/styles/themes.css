@@ -1,0 +1,68 @@
+/* ======= FONTS ======= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  /* Brand Colors */
+  --primary: #831F5C; /* Temple Purple */
+  --primary-dark: #5b1442;
+  --secondary: #E2AF35; /* Gold */
+  --lotus1: #E76BA5;
+  --lotus2: #F6A8C5;
+  --accent-red: #B0232F;
+  
+  /* Backgrounds */
+  --bg: #ffffff;
+  --bg-soft: #FFF5E6;
+
+  /* Text */
+  --text-dark: #1B0F1A;
+  --text-light: #fff;
+}
+
+/* ===== BASE ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+h1,h2,h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Containers */
+.section {
+  padding: 90px 0;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--lotus1));
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline-primary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Card */
+.card {
+  border: none;
+  border-radius: 14px;
+  transition: 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 25px rgba(131, 31, 92, 0.25);
+}

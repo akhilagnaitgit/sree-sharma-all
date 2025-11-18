@@ -1,0 +1,13 @@
+.lotus-glow:hover {
+  box-shadow: 0 0 20px var(--lotus1);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all .008s ease;
+}
+.fade-up.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}

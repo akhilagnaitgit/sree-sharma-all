@@ -1,0 +1,33 @@
+/* src/admin/admin.css */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 230px;
+  background-color: #212529;
+  color: white;
+  min-height: 100vh;
+}
+
+.admin-link {
+  color: #ddd;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.admin-link:hover {
+  color: #fff;
+}
+
+.admin-main {
+  flex: 1;
+  background-color: #f8f9fa;
+}
+
+.admin-content {
+  overflow-y: auto;
+}

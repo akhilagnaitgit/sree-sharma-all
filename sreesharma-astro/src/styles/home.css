@@ -1,0 +1,104 @@
+/* Section Titles */
+.section-title {
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+  color: var(--primary);
+}
+
+/* Scrollable cards override */
+.slick-slide > div {
+  margin: 0 12px;
+}
+
+/* Homas / Yantras Section Cards */
+.homa-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.08);
+  transition: .08s;
+}
+.homa-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 26px rgba(131, 31, 92, 0.25);
+}
+
+/* Split Sections */
+.split-img {
+  border-radius: 14px;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+
+.hero-banner {
+  width: 100%;
+  height: 60vh; /* big on desktop */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(to bottom, rgba(27, 15, 26, 0.7), rgba(0,0,0,0));
+}
+
+
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object-position: center; */
+  transition: .0.08s ease;
+}
+
+/* shrink diagonally on small screens */
+@media (max-width: 992px) {
+  .hero-banner {
+    height: 45vh;
+  }
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 32vh;
+  }
+}
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 26vh;
+  }
+}
+
+/* Slick slider card wrapper fix */
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+.slick-slide > div {
+  width: 100% !important;
+}
+
+/* Card width control */
+.homa-box,
+.yantra-box {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .homa-box,
+  .yantra-box {
+    max-width: 260px;
+  }
+}
+

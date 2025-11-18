@@ -1,0 +1,87 @@
+.muhurta-form {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0px 12px 30px rgba(0,0,0,0.12);
+  border: 3px solid var(--primary);
+}
+
+.muhurta-form input,
+.muhurta-form textarea {
+  border-radius: 10px !important;
+  border: 2px solid var(--primary) !important;
+}
+
+.muhurta-form input:focus,
+.muhurta-form textarea:focus {
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 10px rgba(226,175,53,0.5) !important;
+}
+
+/* Counter Boxes */
+.counter-box h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+.counter-box p {
+  margin-top: -8px;
+  font-size: 15px;
+}
+
+/* Cards 3 per row bigger */
+.muhurta-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+
+/* Card Container */
+.muhurta-card {
+  transition: all .3s ease;
+  border: 1px solid rgba(131,31,92,0.12);
+}
+
+/* Hover Effect */
+.muhurta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(131,31,92,0.25);
+}
+
+/* Image Styling */
+.muhurta-card-img-wrapper {
+  height: 220px;
+  overflow: hidden;
+}
+
+.muhurta-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .4s ease;
+}
+
+/* Zoom image on hover */
+.muhurta-card:hover .muhurta-card-img {
+  transform: scale(1.07);
+}
+
+
+/* Default tab text */
+.nav-tabs .nav-link {
+  color: #4b0082 !important; /* Indigo/Purple matching theme */
+  font-weight: 600;
+}
+
+/* Active tab text & background */
+.nav-tabs .nav-link.active {
+  color: #fff !important;
+  background-color: #4b0082 !important; /* Purple */
+  border-color: #4b0082 !important;
+}
+
+/* Hover effect */
+.nav-tabs .nav-link:hover {
+  color: #3d0068 !important;
+}
+
