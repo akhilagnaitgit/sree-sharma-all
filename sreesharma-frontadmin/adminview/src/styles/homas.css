@@ -1,0 +1,64 @@
+.mh-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mh-add-btn {
+  background: #d72880;
+  padding: 10px 18px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+/* TABLE WRAPPER */
+.mh-container {
+  width: 100%;
+  overflow-x: auto; /* ⭐ important for mobile scrolling */
+}
+
+/* TABLE */
+.mh-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  min-width: 900px; /* ⭐ table won't break on small screens */
+}
+
+.mh-table th, .mh-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Buttons */
+.mh-edit {
+  background: #ffca28;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+.mh-delete {
+  background: #e53935;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* ⭐ RESPONSIVE HEADER */
+@media (max-width: 600px) {
+  .mh-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mh-add-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,23 @@
+/* Desktop Layout */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f8fc;
+}
+
+.content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+}
+
+/* 📱 Mobile Layout */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
