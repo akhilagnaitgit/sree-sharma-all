@@ -2,7 +2,17 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Homas from "./pages/Homas";
+import Muhurta from "./pages/Muhurta";
+import Vastu from "./pages/Vastu";
 // import NotFound from "./pages/NotFound";
+
+import Gallery from "./pages/Gallery";
+import Forms from "./pages/Forms";
+import Users from "./pages/Users";
+import Admins from "./pages/Admins";
+import Payments from "./pages/Payments";
+import Trending from "./pages/Trending";
+
 
 export default function App() {
   return (
@@ -10,7 +20,18 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/homas" element={<Homas />} />
+        <Route path="/muhurta" element={<Muhurta />} />
+        <Route path="/vastu" element={<Vastu />} />
         {/* <Route path="*" element={<NotFound />} /> */}
+
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/forms" element={<Forms />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/admins" element={<Admins />} />
+        <Route path="/payments" element={<Payments />} />
+        <Route path="/trending" element={<Trending />} />
+
+
       </Routes>
     </BrowserRouter>
   );

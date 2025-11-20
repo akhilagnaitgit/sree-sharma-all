@@ -62,3 +62,42 @@
     width: 100%;
   }
 }
+
+
+
+
+
+
+.mh-controls {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.mh-search {
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  min-width:320px;
+}
+
+/* pagination */
+.mh-pagination {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  padding:18px 0;
+}
+
+/* loading */
+.mh-loading {
+  padding:40px;
+  text-align:center;
+  color:#666;
+}
+
+/* responsive: allow table horizontal scroll on small screens */
+.mh-container {
+  width:100%;
+  overflow-x:auto;
+}
