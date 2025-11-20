@@ -9,6 +9,10 @@ import adminMiddleware from "../middlewares/adminMiddleware.js";
 
 const router = Router();
 
+// jwt.sign(payload, process.env.JWT_SECRET)
+// jwt.verify(token, process.env.JWT_SECRET)
+
+
 // ADMIN PROTECTED ROUTES
 router.get("/users", authMiddleware, adminMiddleware, getUsers);
 router.get("/admins", authMiddleware, adminMiddleware, getAdmins);

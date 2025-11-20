@@ -1,25 +1,52 @@
+// import mysql from "mysql2";
+// import dotenv from "dotenv";
+
+// dotenv.config();
+
+// const db = mysql.createPool({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASS,
+//   database: process.env.DB_NAME,
+//   waitForConnections: true,
+//   connectionLimit: 10, //  allows multiple simultaneous connections
+//   queueLimit: 0
+// });
+
+// db.getConnection((err, connection) => {
+//   if (err) {
+//     console.error(" Database connection failed:", err);
+//   } else {
+//     console.log(" MySQL connection established");
+//     connection.release();
+//   }
+// });
+
+// export default db.promise();
+
+
 import mysql from "mysql2";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = mysql.createPool({
+const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   waitForConnections: true,
-  connectionLimit: 10, //  allows multiple simultaneous connections
+  connectionLimit: 10,
   queueLimit: 0
 });
 
-db.getConnection((err, connection) => {
+pool.getConnection((err, conn) => {
   if (err) {
-    console.error(" Database connection failed:", err);
+    console.error("❌ Database connection failed:", err.message);
   } else {
-    console.log(" MySQL connection established");
-    connection.release();
+    console.log("✅ MySQL connected");
+    conn.release();
   }
 });
 
-export default db.promise();
+export default pool.promise();

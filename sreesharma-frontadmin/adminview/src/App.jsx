@@ -1,10 +1,52 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import React from "react";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Dashboard from "./pages/Dashboard";
+// import Homas from "./pages/Homas";
+// import Muhurta from "./pages/Muhurta";
+// import Vastu from "./pages/Vastu";
+// // import NotFound from "./pages/NotFound";
+
+// import Gallery from "./pages/Gallery";
+// import Forms from "./pages/Forms";
+// import Users from "./pages/Users";
+// import Admins from "./pages/Admins";
+// import Payments from "./pages/Payments";
+// import Trending from "./pages/Trending";
+
+
+
+
+
+// export default function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Dashboard />} />
+//         <Route path="/homas" element={<Homas />} />
+//         <Route path="/muhurta" element={<Muhurta />} />
+//         <Route path="/vastu" element={<Vastu />} />
+//         {/* <Route path="*" element={<NotFound />} /> */}
+
+//         <Route path="/gallery" element={<Gallery />} />
+//         <Route path="/forms" element={<Forms />} />
+//         <Route path="/users" element={<Users />} />
+//         <Route path="/admins" element={<Admins />} />
+//         <Route path="/payments" element={<Payments />} />
+//         <Route path="/trending" element={<Trending />} />
+
+
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Dashboard from "./pages/Dashboard";
 import Homas from "./pages/Homas";
 import Muhurta from "./pages/Muhurta";
 import Vastu from "./pages/Vastu";
-// import NotFound from "./pages/NotFound";
 
 import Gallery from "./pages/Gallery";
 import Forms from "./pages/Forms";
@@ -12,206 +54,126 @@ import Users from "./pages/Users";
 import Admins from "./pages/Admins";
 import Payments from "./pages/Payments";
 import Trending from "./pages/Trending";
+import NotFound from "./pages/NotFound";
 
+import AdminLogin from "./pages/AdminLogin";
+import RequireAdmin from "./utils/RequireAdmin";
 
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/homas" element={<Homas />} />
-        <Route path="/muhurta" element={<Muhurta />} />
-        <Route path="/vastu" element={<Vastu />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
 
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/forms" element={<Forms />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/admins" element={<Admins />} />
-        <Route path="/payments" element={<Payments />} />
-        <Route path="/trending" element={<Trending />} />
+        {/* Admin Login */}
+        <Route path="/admin-login" element={<AdminLogin />} />
 
+        {/* Protected Dashboard */}
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAdmin>
+              <Dashboard />
+            </RequireAdmin>
+          }
+        />
 
+        {/* Protected Main Modules */}
+        <Route
+          path="/homas"
+          element={
+            <RequireAdmin>
+              <Homas />
+            </RequireAdmin>
+          }
+        />
+
+        <Route
+          path="/muhurta"
+          element={
+            <RequireAdmin>
+              <Muhurta />
+            </RequireAdmin>
+          }
+        />
+
+        <Route
+          path="/vastu"
+          element={
+            <RequireAdmin>
+              <Vastu />
+            </RequireAdmin>
+          }
+        />
+
+        {/* New Sidebar Pages */}
+        <Route
+          path="/gallery"
+          element={
+            <RequireAdmin>
+              <Gallery />
+            </RequireAdmin>
+          }
+        />
+
+        <Route
+          path="/forms"
+          element={
+            <RequireAdmin>
+              <Forms />
+            </RequireAdmin>
+          }
+        />
+
+        <Route
+          path="/users"
+          element={
+            <RequireAdmin>
+              <Users />
+            </RequireAdmin>
+          }
+        />
+
+        <Route
+          path="/admins"
+          element={
+            <RequireAdmin>
+              <Admins />
+            </RequireAdmin>
+          }
+        />
+
+        <Route
+          path="/payments"
+          element={
+            <RequireAdmin>
+              <Payments />
+            </RequireAdmin>
+          }
+        />
+
+        <Route
+          path="/trending"
+          element={
+            <RequireAdmin>
+              <Trending />
+            </RequireAdmin>
+          }
+        />
+
+        {/* Default redirect to dashboard if logged in */}
+        <Route
+          path="/"
+          element={
+            <RequireAdmin>
+              <Dashboard />
+            </RequireAdmin>
+          }
+        />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
-
-
-// import { Routes, Route } from "react-router-dom";
-// import React, { useEffect } from "react";
-
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
-
-// import HomePage from "./pages/HomePage";
-// import ServicesPage from "./pages/ServicesPage";
-// import ServiceDetail from "./pages/ServiceDetail";
-// import GalleryPage from "./pages/GalleryPage";
-// import AboutPage from "./pages/AboutPage";
-// import ContactPage from "./pages/ContactPage";
-
-// import HomasPage from "./pages/HomasPage";
-// import HomaDetail from "./pages/HomaDetail";
-
-// import MuhurtasPage from "./pages/MuhurtasPage";
-// import MuhurtaDetail from "./pages/MuhurtaDetail";
-
-// import YantrasPage from "./pages/YantrasPage";
-
-// import AstrologyPage from "./pages/AstrologyPage";
-// import AstrologyDetail from "./pages/AstrologyDetail";
-
-// import VastuPage from "./pages/VastuPage";
-// import VastuDetail from "./pages/VastuDetail";
-
-// import MarriageMatchingPage from "./pages/MarriageMatchingPage";
-// import MarriageMatchingDetail from "./pages/MarriageMatchingDetail";
-
-// import AdminDashboard from "./admin/pages/AdminDashboard";
-// import ManageHomas from "./admin/pages/ManageHomas";
-// import ManageMuhurtas from "./admin/pages/ManageMuhurtas";
-// import AdminVastu from "./admin/pages/AdminVastu";
-// import UsersList from "./admin/pages/UsersList";
-// import AdminList from "./admin/pages/AdminList";
-// import AddAdmin from "./admin/pages/AddAdmin";
-
-// import AuthProvider from "./auth/AuthContext";
-// import Signin from "./auth/Signin";
-// import Signup from "./auth/Signup";
-// import CheckAuthRedirect from "./auth/CheckAuthRedirect";
-// import AdminRoute from "./admin/components/AdminRoute";
-
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-
-
-// function App() {
-//   useEffect(() => {
-//     AOS.init({ duration: 800, once: true });
-//   }, []);
-
-//   return (
-//     <AuthProvider>
-//       <Routes>
-
-//         {/* AUTH ROUTES (NO HEADER/FOOTER) */}
-//         <Route path="/signin" element={<Signin />} />
-//         <Route path="/signup" element={<Signup />} />
-
-//         {/* LAYOUT FOR ALL OTHER ROUTES */}
-//         <Route
-//           path="*"
-//           element={
-//             <>
-//               <Header />
-//               <main>
-
-//                 {/* PUBLIC ROUTES */}
-//                 <Routes>
-
-//                   <Route path="/" element={<CheckAuthRedirect />} />
-//                   <Route path="/home" element={<HomePage />} />
-
-//                   <Route path="/services" element={<ServicesPage />} />
-//                   <Route path="/services/:slug" element={<ServiceDetail />} />
-
-//                   <Route path="/gallery" element={<GalleryPage />} />
-//                   <Route path="/about" element={<AboutPage />} />
-//                   <Route path="/contact" element={<ContactPage />} />
-
-//                   <Route path="/homas" element={<HomasPage />} />
-//                   <Route path="/homa/:slug" element={<HomaDetail />} />
-
-//                   <Route path="/muhurtas" element={<MuhurtasPage />} />
-//                   <Route path="/muhurta/:slug" element={<MuhurtaDetail />} />
-
-//                   <Route path="/yantras" element={<YantrasPage />} />
-
-//                   <Route path="/astrology" element={<AstrologyPage />} />
-//                   <Route path="/astrology/:slug" element={<AstrologyDetail />} />
-
-//                   <Route path="/vastu" element={<VastuPage />} />
-//                   <Route path="/vastu/:slug" element={<VastuDetail />} />
-
-//                   <Route path="/marriage-matching" element={<MarriageMatchingPage />} />
-//                   <Route path="/marriage-matching/:slug" element={<MarriageMatchingDetail />} />
-
-//                   {/* ADMIN ROUTES */}
-//                   <Route
-//                     path="/admin"
-//                     element={
-//                       <AdminRoute>
-//                         <AdminDashboard />
-//                       </AdminRoute>
-//                     }
-//                   />
-
-//                   <Route
-//                     path="/admin/homas"
-//                     element={
-//                       <AdminRoute>
-//                         <ManageHomas />
-//                       </AdminRoute>
-//                     }
-//                   />
-
-//                   <Route
-//                     path="/admin/muhurtas"
-//                     element={
-//                       <AdminRoute>
-//                         <ManageMuhurtas />
-//                       </AdminRoute>
-//                     }
-//                   />
-
-//                   <Route
-//                     path="/admin/vastu"
-//                     element={
-//                       <AdminRoute>
-//                         <AdminVastu />
-//                       </AdminRoute>
-//                     }
-//                   />
-
-//                   <Route
-//                     path="/admin/users"
-//                     element={
-//                       <AdminRoute>
-//                         <UsersList />
-//                       </AdminRoute>
-//                     }
-//                   />
-
-//                   <Route
-//                     path="/admin/admins"
-//                     element={
-//                       <AdminRoute>
-//                         <AdminList />
-//                       </AdminRoute>
-//                     }
-//                   />
-
-//                   <Route
-//                     path="/admin/add-admin"
-//                     element={
-//                       <AdminRoute>
-//                         <AddAdmin />
-//                       </AdminRoute>
-//                     }
-//                   />
-
-//                 </Routes>
-//               </main>
-//               <Footer />
-//             </>
-//           }
-//         />
-
-//       </Routes>
-//     </AuthProvider>
-//   );
-// }
-
-// export default App;
+export default App;
