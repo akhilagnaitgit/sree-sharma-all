@@ -89,6 +89,8 @@ import vastuRouter from "./routes/vastuRouter.js";
 import authRoutes from "./routes/authRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import adminAuth from "./routes/adminAuth.js";
+import userAuth from "./routes/userAuth.js";
+import formsRoutes from "./routes/forms.js";
 
 import bcrypt from "bcryptjs";
 console.log(bcrypt.hashSync("admin123", 10));
@@ -112,6 +114,9 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/homas", homaRoutes);
 app.use("/api/muhurta", muhurtaRoutes);
 app.use("/api/vastu", vastuRouter);
+app.use("/user", userAuth);
+app.use("/forms", formsRoutes);
+
 
 // OUR ADMIN AUTH ROUTES
 app.use("/admin", adminAuth);

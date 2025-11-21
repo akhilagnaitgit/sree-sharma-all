@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import "./AdminLogin.css";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./auth.css";
 
-
-export default function AdminLogin() {
+export default function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const [form, setForm] = useState({
-    login: "",
-    password: ""
-  });
+  const next = new URLSearchParams(location.search).get("next") || "/";
 
+  const [form, setForm] = useState({ login: "", password: "" });
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
@@ -23,23 +21,23 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/admin/login", form);
+      const res = await axios.post("http://localhost:5000/user/login", form);
+      console.log("Login Response:", res.data);
+      localStorage.setItem("userToken", res.data.token);
+      localStorage.setItem("userData", JSON.stringify(res.data.user));
 
-      localStorage.setItem("adminToken", res.data.token);
-      localStorage.setItem("adminData", JSON.stringify(res.data.admin));
-
-      navigate("/dashboard"); // redirect to admin dashboard
+      navigate(next);
     } catch (err) {
       setError(err.response?.data?.msg || "Login failed");
     }
   };
 
   return (
-    <div className="login-container">
+    <div className="login-wrapper">
       <form className="login-box" onSubmit={handleSubmit}>
-        <h2>Admin Login</h2>
-        
-        {error && <p className="error">{error}</p>}
+        <h2>User Login</h2>
+
+        {error && <p className="error-msg">{error}</p>}
 
         <input
           type="text"
@@ -60,6 +58,10 @@ export default function AdminLogin() {
         />
 
         <button type="submit">Login</button>
+
+        <p className="small-text">
+          Don't have an account? <a href="/register">Register</a>
+        </p>
       </form>
     </div>
   );

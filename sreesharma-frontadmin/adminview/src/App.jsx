@@ -58,6 +58,7 @@ import NotFound from "./pages/NotFound";
 
 import AdminLogin from "./pages/AdminLogin";
 import RequireAdmin from "./utils/RequireAdmin";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -65,7 +66,7 @@ function App() {
       <Routes>
 
         {/* Admin Login */}
-        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
 
         {/* Protected Dashboard */}
         <Route
